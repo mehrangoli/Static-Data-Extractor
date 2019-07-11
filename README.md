@@ -6,12 +6,12 @@ This tool is able to generate XML and TXT formats of the extracted static inform
 
 For details on the techniques behind see the publication "AIBA: Automated Intra-Cycle Behavioral Analysis for SystemC-based Design Exploration" by Mehran Goli, Jannis Stoppe, and Rolf Drechsler accepted at ICCD 2016.
 
-##Clone
+## Clone
 Clone this tool using:
 
 git clone https://github.com/mehrangoli/Static-Data-Extractor.git
 
-##Installation (shell interface)
+## Installation (shell interface)
 To build binary model of this tool:
 ```bash
 make -j2
