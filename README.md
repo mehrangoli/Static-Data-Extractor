@@ -17,3 +17,24 @@ To build binary model of this tool:
 make -j2
 
 After installation, this tool can be run  ./main
+
+
+
+
+# Debug Symbols Extraction
+In order to generate debug symbol from SystemC executable model, you need to run the executable model under control of GNU Debugger (GDB) using the following command:
+
+gdb output_exe
+
+Then use the following gdb commands to generate debug symbols:
+
+set logging redirect on
+set height 0
+break sc_main
+commands
+	maintenance print symbols "debug_symbol.txt"
+end
+run
+
+
+The generated debug symbols "debug_symbol.txt" is used as the input of Static-Data-Extractor tool.
