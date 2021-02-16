@@ -1,0 +1,419 @@
+<ESL_ARCH>
+<Global_function name = "sc_main">
+	<Global_variable name = "icache_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "ram_cs"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "ram_we"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "addr"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "ram_datain"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "ram_dataout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "bios_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "icache_din"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "icache_validin"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "icache_stall"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "paging_dout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "paging_csout"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "paging_weout"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "physical_address"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "branch_target_address"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "next_pc"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "branch_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "stall_fetch"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_fetch"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "instruction"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "instruction_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "program_counter"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "branch_clear"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_fetch_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "reset"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_branch_address"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "pred_branch_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_tellid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_instruction"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "pred_inst_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pred_inst_pc"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "pred_on"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "branch_instruction_address"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "dram_dataout"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "dram_rd_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "dram_write_src"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "mem_access"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "mem_address"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "alu_op"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "mem_write"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "alu_src"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "reg_write"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "src_A"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "src_B"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "forward_A"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "forward_B"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "decode_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "float_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "mmx_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pid_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "pid_data"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "mmic_datain"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "mmic_statein"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "mmic_cs"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "mmic_we"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "mmic_addr"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "mmic_dest"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "mmic_destout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "mmic_dataout"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "mmic_out_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "mmic_stateout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "in_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "negate"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "add1"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "shift_sel"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "c"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "v"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "z"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "dout"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "out_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "destout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "fdout"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "fout_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "fdestout"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "ireq0"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "ireq1"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "ireq2"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "ireq3"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "rd_wr"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "intreq"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "vectno"	type = "sc_core::sc_signal<unsigned"></Global_variable>
+	<Global_variable name = "intack"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "intack_cpu"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "dsp_in1"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "dsp_out1"	type = "sc_core::sc_signal<int>"></Global_variable>
+	<Global_variable name = "dsp_data_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "dsp_input_valid"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "dsp_data_requested"	type = "sc_core::sc_signal<bool>"></Global_variable>
+	<Global_variable name = "clk"	type = "sc_core::sc_clock"></Global_variable>
+
+
+</Global_function>
+
+<Module name = "fetch">
+	<Global_variable name = "ramdata"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "branch_address"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "next_pc"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "branch_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "stall_fetch"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "interrupt"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "int_vectno"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "bios_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "icache_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "pred_fetch"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "pred_branch_address"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "pred_branch_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "ram_cs"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "ram_we"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "address"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "smc_instruction"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "instruction"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "instruction_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "program_counter"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "interrupt_ack"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "branch_clear"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "pred_fetch_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "reset"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "memory_latency"	type = "int"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "addr_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "datai_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "lock_tmp"	type = "unsigned"></Local_variable>
+	</Function>
+	<Function name = "init_param"	type = "void">
+		<Local_variable name = "given_delay_cycles"	type = "int"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "decode">
+	<Global_variable name = "resetin"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "instruction"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "pred_instruction"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "instruction_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "pred_inst_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "destreg_write"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "destreg_write_src"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "alu_dataout"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dram_dataout"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dram_rd_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "dram_write_src"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "fpu_dout"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "fpu_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "fpu_destout"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "clear_branch"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "display_done"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "pc"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "pred_on"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "br_instruction_address"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "next_pc"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "branch_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "branch_target_address"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "mem_access"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "mem_address"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "alu_op"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "mem_write"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "alu_src"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "reg_write"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "src_A"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "src_B"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "forward_A"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "forward_B"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "stall_fetch"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "decode_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "float_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "mmx_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "pid_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "pid_data"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "cpu_reg32]"	type = "int"></Global_variable>
+	<Global_variable name = "vcpu_reg32]"	type = "int"></Global_variable>
+	<Global_variable name = "cpu_reg_lock32]"	type = "bool"></Global_variable>
+	<Global_variable name = "pc_reg"	type = "unsigned"></Global_variable>
+	<Global_variable name = "jalpc_reg"	type = "unsigned"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "instr_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "opcode_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "regA_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "regB_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "regC_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "imm_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "offset_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "label_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "longlabel_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "srcA_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "srcB_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "srcC_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "i"	type = "int"></Local_variable>
+		<Local_variable name = "branch_direction_tmp"	type = "bool"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "exec">
+	<Global_variable name = "reset"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "in_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "opcode"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "negate"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "add1"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "shift_sel"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "dina"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dinb"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "forward_A"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "forward_B"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "dest"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "C"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "V"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "Z"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "dout"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "out_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "destout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+
+	<Function name = "factorial"	type = "void">
+		<Local_variable name = "factor_tmp"	type = "long"></Local_variable>
+		<Local_variable name = "in_tmp"	type = "long"></Local_variable>
+	</Function>
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "opcode_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "add1_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dina_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dinb_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dout_tmp"	type = "long"></Local_variable>
+		<Local_variable name = "dest_tmp"	type = "unsigned"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "floating">
+	<Global_variable name = "in_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "opcode"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "floata"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "floatb"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dest"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "fdout"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "fout_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "fdestout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "opcode_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dout_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dest_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpua_sign_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpua_exponent_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpua_significand_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpub_sign_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpub_exponent_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpub_significand_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "opcode_encode"	type = "const"></Local_variable>
+		<Local_variable name = "fpua_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "fpub_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "exponent_diff_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "significant_result"	type = "unsigned"></Local_variable>
+		<Local_variable name = "overflow_sign_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "result_exp_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "result_sign_tmp"	type = "unsigned"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "mmxu">
+	<Global_variable name = "mmx_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "opcode"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "mmxa"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "mmxb"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dest"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "mmxdout"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "mmxout_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "mmxdestout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "opcode_tmp"	type = "int"></Local_variable>
+		<Local_variable name = "dout_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "dest_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "opcode_encode"	type = "const"></Local_variable>
+		<Local_variable name = "mmxa_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxb_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxa0_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxa1_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxa2_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxa3_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxb0_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxb1_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxb2_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxb3_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxc0_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxc1_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxc2_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxc3_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxcU_tmp"	type = "unsigned"></Local_variable>
+		<Local_variable name = "mmxcL_tmp"	type = "unsigned"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "bios">
+	<Global_variable name = "datain"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "cs"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "we"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "addr"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "dataout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "bios_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "stall_fetch"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "imemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "itagmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "wait_cycles"	type = "int"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "address"	type = "unsigned"></Local_variable>
+	</Function>
+	<Function name = "init_param"	type = "void">
+		<Local_variable name = "given_delay_cycles"	type = "int"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "paging">
+	<Global_variable name = "paging_din"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "paging_csin"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "paging_wein"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "logical_address"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "icache_din"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "icache_validin"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "icache_stall"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "paging_dout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "paging_csout"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "paging_weout"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "physical_address"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "dataout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "data_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "stall_ifu"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "pid_reg"	type = "int"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "address"	type = "int"></Local_variable>
+		<Local_variable name = "dataout_tmp"	type = "int"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "icache">
+	<Global_variable name = "datain"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "cs"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "we"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "addr"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "ld_valid"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "ld_data"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "dataout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "icache_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "stall_fetch"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "icmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "ictagmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "pid"	type = "int"></Global_variable>
+	<Global_variable name = "wait_cycles"	type = "int"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "address"	type = "unsigned"></Local_variable>
+	</Function>
+	<Function name = "init_param"	type = "void">
+		<Local_variable name = "given_delay_cycles"	type = "int"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "dcache">
+	<Global_variable name = "datain"	type = "sc_core::sc_in<int>"></Global_variable>
+	<Global_variable name = "statein"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "cs"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "we"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "addr"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "dest"	type = "sc_core::sc_in<unsigned"></Global_variable>
+	<Global_variable name = "destout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "dataout"	type = "sc_core::sc_out<int>"></Global_variable>
+	<Global_variable name = "out_valid"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "stateout"	type = "sc_core::sc_out<unsigned"></Global_variable>
+	<Global_variable name = "CLK"	type = "sc_core::sc_in_clk"></Global_variable>
+	<Global_variable name = "dmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "dsmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "dtagmemory"	type = "unsigned"></Global_variable>
+	<Global_variable name = "wait_cycles"	type = "int"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+		<Local_variable name = "address"	type = "unsigned"></Local_variable>
+		<Local_variable name = "dest_tmp"	type = "unsigned"></Local_variable>
+	</Function>
+	<Function name = "init_param"	type = "void">
+		<Local_variable name = "given_delay_cycles"	type = "int"></Local_variable>
+	</Function>
+
+</Module>
+
+<Module name = "pic">
+	<Global_variable name = "ireq0"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "ireq1"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "ireq2"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "ireq3"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "cs"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "rd_wr"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "intack_cpu"	type = "sc_core::sc_in<bool>"></Global_variable>
+	<Global_variable name = "intreq"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "intack"	type = "sc_core::sc_out<bool>"></Global_variable>
+	<Global_variable name = "vectno"	type = "sc_core::sc_out<unsigned"></Global_variable>
+
+	<Function name = "entry"	type = "void">
+	</Function>
+
+</Module>
+
+</ESL_ARCH>

@@ -1,0 +1,441 @@
+--------------Extracted Static Information--------------
+Module Name ----->
+sc_main
+Var List ----->
+Name: icache_valid	Type: sc_core::sc_signal<bool>
+Name: ram_cs	Type: sc_core::sc_signal<bool>
+Name: ram_we	Type: sc_core::sc_signal<bool>
+Name: addr	Type: sc_core::sc_signal<unsigned
+Name: ram_datain	Type: sc_core::sc_signal<unsigned
+Name: ram_dataout	Type: sc_core::sc_signal<unsigned
+Name: bios_valid	Type: sc_core::sc_signal<bool>
+Name: icache_din	Type: sc_core::sc_signal<unsigned
+Name: icache_validin	Type: sc_core::sc_signal<bool>
+Name: icache_stall	Type: sc_core::sc_signal<bool>
+Name: paging_dout	Type: sc_core::sc_signal<unsigned
+Name: paging_csout	Type: sc_core::sc_signal<bool>
+Name: paging_weout	Type: sc_core::sc_signal<bool>
+Name: physical_address	Type: sc_core::sc_signal<unsigned
+Name: branch_target_address	Type: sc_core::sc_signal<unsigned
+Name: next_pc	Type: sc_core::sc_signal<bool>
+Name: branch_valid	Type: sc_core::sc_signal<bool>
+Name: stall_fetch	Type: sc_core::sc_signal<bool>
+Name: pred_fetch	Type: sc_core::sc_signal<bool>
+Name: instruction	Type: sc_core::sc_signal<unsigned
+Name: instruction_valid	Type: sc_core::sc_signal<bool>
+Name: program_counter	Type: sc_core::sc_signal<unsigned
+Name: branch_clear	Type: sc_core::sc_signal<bool>
+Name: pred_fetch_valid	Type: sc_core::sc_signal<bool>
+Name: reset	Type: sc_core::sc_signal<bool>
+Name: pred_branch_address	Type: sc_core::sc_signal<unsigned
+Name: pred_branch_valid	Type: sc_core::sc_signal<bool>
+Name: pred_tellid	Type: sc_core::sc_signal<bool>
+Name: pred_instruction	Type: sc_core::sc_signal<unsigned
+Name: pred_inst_valid	Type: sc_core::sc_signal<bool>
+Name: pred_inst_pc	Type: sc_core::sc_signal<unsigned
+Name: pred_on	Type: sc_core::sc_signal<bool>
+Name: branch_instruction_address	Type: sc_core::sc_signal<unsigned
+Name: dram_dataout	Type: sc_core::sc_signal<int>
+Name: dram_rd_valid	Type: sc_core::sc_signal<bool>
+Name: dram_write_src	Type: sc_core::sc_signal<unsigned
+Name: mem_access	Type: sc_core::sc_signal<bool>
+Name: mem_address	Type: sc_core::sc_signal<unsigned
+Name: alu_op	Type: sc_core::sc_signal<int>
+Name: mem_write	Type: sc_core::sc_signal<bool>
+Name: alu_src	Type: sc_core::sc_signal<unsigned
+Name: reg_write	Type: sc_core::sc_signal<bool>
+Name: src_A	Type: sc_core::sc_signal<int>
+Name: src_B	Type: sc_core::sc_signal<int>
+Name: forward_A	Type: sc_core::sc_signal<bool>
+Name: forward_B	Type: sc_core::sc_signal<bool>
+Name: decode_valid	Type: sc_core::sc_signal<bool>
+Name: float_valid	Type: sc_core::sc_signal<bool>
+Name: mmx_valid	Type: sc_core::sc_signal<bool>
+Name: pid_valid	Type: sc_core::sc_signal<bool>
+Name: pid_data	Type: sc_core::sc_signal<int>
+Name: mmic_datain	Type: sc_core::sc_signal<int>
+Name: mmic_statein	Type: sc_core::sc_signal<unsigned
+Name: mmic_cs	Type: sc_core::sc_signal<bool>
+Name: mmic_we	Type: sc_core::sc_signal<bool>
+Name: mmic_addr	Type: sc_core::sc_signal<unsigned
+Name: mmic_dest	Type: sc_core::sc_signal<unsigned
+Name: mmic_destout	Type: sc_core::sc_signal<unsigned
+Name: mmic_dataout	Type: sc_core::sc_signal<int>
+Name: mmic_out_valid	Type: sc_core::sc_signal<bool>
+Name: mmic_stateout	Type: sc_core::sc_signal<unsigned
+Name: in_valid	Type: sc_core::sc_signal<bool>
+Name: negate	Type: sc_core::sc_signal<bool>
+Name: add1	Type: sc_core::sc_signal<int>
+Name: shift_sel	Type: sc_core::sc_signal<bool>
+Name: c	Type: sc_core::sc_signal<bool>
+Name: v	Type: sc_core::sc_signal<bool>
+Name: z	Type: sc_core::sc_signal<bool>
+Name: dout	Type: sc_core::sc_signal<int>
+Name: out_valid	Type: sc_core::sc_signal<bool>
+Name: destout	Type: sc_core::sc_signal<unsigned
+Name: fdout	Type: sc_core::sc_signal<int>
+Name: fout_valid	Type: sc_core::sc_signal<bool>
+Name: fdestout	Type: sc_core::sc_signal<unsigned
+Name: ireq0	Type: sc_core::sc_signal<bool>
+Name: ireq1	Type: sc_core::sc_signal<bool>
+Name: ireq2	Type: sc_core::sc_signal<bool>
+Name: ireq3	Type: sc_core::sc_signal<bool>
+Name: rd_wr	Type: sc_core::sc_signal<bool>
+Name: intreq	Type: sc_core::sc_signal<bool>
+Name: vectno	Type: sc_core::sc_signal<unsigned
+Name: intack	Type: sc_core::sc_signal<bool>
+Name: intack_cpu	Type: sc_core::sc_signal<bool>
+Name: dsp_in1	Type: sc_core::sc_signal<int>
+Name: dsp_out1	Type: sc_core::sc_signal<int>
+Name: dsp_data_valid	Type: sc_core::sc_signal<bool>
+Name: dsp_input_valid	Type: sc_core::sc_signal<bool>
+Name: dsp_data_requested	Type: sc_core::sc_signal<bool>
+Name: clk	Type: sc_core::sc_clock
+
+Func List ----->
+No Function!
+
+----------------------------------------------------
+Module Name ----->
+fetch
+Var List ----->
+Name: ramdata	Type: sc_core::sc_in<unsigned
+Name: branch_address	Type: sc_core::sc_in<unsigned
+Name: next_pc	Type: sc_core::sc_in<bool>
+Name: branch_valid	Type: sc_core::sc_in<bool>
+Name: stall_fetch	Type: sc_core::sc_in<bool>
+Name: interrupt	Type: sc_core::sc_in<bool>
+Name: int_vectno	Type: sc_core::sc_in<unsigned
+Name: bios_valid	Type: sc_core::sc_in<bool>
+Name: icache_valid	Type: sc_core::sc_in<bool>
+Name: pred_fetch	Type: sc_core::sc_in<bool>
+Name: pred_branch_address	Type: sc_core::sc_in<unsigned
+Name: pred_branch_valid	Type: sc_core::sc_in<bool>
+Name: ram_cs	Type: sc_core::sc_out<bool>
+Name: ram_we	Type: sc_core::sc_out<bool>
+Name: address	Type: sc_core::sc_out<unsigned
+Name: smc_instruction	Type: sc_core::sc_out<unsigned
+Name: instruction	Type: sc_core::sc_out<unsigned
+Name: instruction_valid	Type: sc_core::sc_out<bool>
+Name: program_counter	Type: sc_core::sc_out<unsigned
+Name: interrupt_ack	Type: sc_core::sc_out<bool>
+Name: branch_clear	Type: sc_core::sc_out<bool>
+Name: pred_fetch_valid	Type: sc_core::sc_out<bool>
+Name: reset	Type: sc_core::sc_out<bool>
+Name: CLK	Type: sc_core::sc_in_clk
+Name: memory_latency	Type: int
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: addr_tmp	Type: unsigned
+	Name: datai_tmp	Type: unsigned
+	Name: lock_tmp	Type: unsigned
+Name: init_param	Type: void
+	Local variables ------->
+	Name: given_delay_cycles	Type: int
+
+----------------------------------------------------
+Module Name ----->
+decode
+Var List ----->
+Name: resetin	Type: sc_core::sc_in<bool>
+Name: instruction	Type: sc_core::sc_in<unsigned
+Name: pred_instruction	Type: sc_core::sc_in<unsigned
+Name: instruction_valid	Type: sc_core::sc_in<bool>
+Name: pred_inst_valid	Type: sc_core::sc_in<bool>
+Name: destreg_write	Type: sc_core::sc_in<bool>
+Name: destreg_write_src	Type: sc_core::sc_in<unsigned
+Name: alu_dataout	Type: sc_core::sc_in<int>
+Name: dram_dataout	Type: sc_core::sc_in<int>
+Name: dram_rd_valid	Type: sc_core::sc_in<bool>
+Name: dram_write_src	Type: sc_core::sc_in<unsigned
+Name: fpu_dout	Type: sc_core::sc_in<int>
+Name: fpu_valid	Type: sc_core::sc_in<bool>
+Name: fpu_destout	Type: sc_core::sc_in<unsigned
+Name: clear_branch	Type: sc_core::sc_in<bool>
+Name: display_done	Type: sc_core::sc_in<bool>
+Name: pc	Type: sc_core::sc_in<unsigned
+Name: pred_on	Type: sc_core::sc_in<bool>
+Name: br_instruction_address	Type: sc_core::sc_out<unsigned
+Name: next_pc	Type: sc_core::sc_out<bool>
+Name: branch_valid	Type: sc_core::sc_out<bool>
+Name: branch_target_address	Type: sc_core::sc_out<unsigned
+Name: mem_access	Type: sc_core::sc_out<bool>
+Name: mem_address	Type: sc_core::sc_out<unsigned
+Name: alu_op	Type: sc_core::sc_out<int>
+Name: mem_write	Type: sc_core::sc_out<bool>
+Name: alu_src	Type: sc_core::sc_out<unsigned
+Name: reg_write	Type: sc_core::sc_out<bool>
+Name: src_A	Type: sc_core::sc_out<int>
+Name: src_B	Type: sc_core::sc_out<int>
+Name: forward_A	Type: sc_core::sc_out<bool>
+Name: forward_B	Type: sc_core::sc_out<bool>
+Name: stall_fetch	Type: sc_core::sc_out<bool>
+Name: decode_valid	Type: sc_core::sc_out<bool>
+Name: float_valid	Type: sc_core::sc_out<bool>
+Name: mmx_valid	Type: sc_core::sc_out<bool>
+Name: pid_valid	Type: sc_core::sc_out<bool>
+Name: pid_data	Type: sc_core::sc_out<int>
+Name: CLK	Type: sc_core::sc_in_clk
+Name: cpu_reg32]	Type: int
+Name: vcpu_reg32]	Type: int
+Name: cpu_reg_lock32]	Type: bool
+Name: pc_reg	Type: unsigned
+Name: jalpc_reg	Type: unsigned
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: instr_tmp	Type: unsigned
+	Name: opcode_tmp	Type: unsigned
+	Name: regA_tmp	Type: unsigned
+	Name: regB_tmp	Type: unsigned
+	Name: regC_tmp	Type: unsigned
+	Name: imm_tmp	Type: unsigned
+	Name: offset_tmp	Type: unsigned
+	Name: label_tmp	Type: int
+	Name: longlabel_tmp	Type: unsigned
+	Name: srcA_tmp	Type: int
+	Name: srcB_tmp	Type: int
+	Name: srcC_tmp	Type: int
+	Name: i	Type: int
+	Name: branch_direction_tmp	Type: bool
+
+----------------------------------------------------
+Module Name ----->
+exec
+Var List ----->
+Name: reset	Type: sc_core::sc_in<bool>
+Name: in_valid	Type: sc_core::sc_in<bool>
+Name: opcode	Type: sc_core::sc_in<int>
+Name: negate	Type: sc_core::sc_in<bool>
+Name: add1	Type: sc_core::sc_in<int>
+Name: shift_sel	Type: sc_core::sc_in<bool>
+Name: dina	Type: sc_core::sc_in<int>
+Name: dinb	Type: sc_core::sc_in<int>
+Name: forward_A	Type: sc_core::sc_in<bool>
+Name: forward_B	Type: sc_core::sc_in<bool>
+Name: dest	Type: sc_core::sc_in<unsigned
+Name: C	Type: sc_core::sc_out<bool>
+Name: V	Type: sc_core::sc_out<bool>
+Name: Z	Type: sc_core::sc_out<bool>
+Name: dout	Type: sc_core::sc_out<int>
+Name: out_valid	Type: sc_core::sc_out<bool>
+Name: destout	Type: sc_core::sc_out<unsigned
+Name: CLK	Type: sc_core::sc_in_clk
+
+Func List ----->
+Name: factorial	Type: void
+	Local variables ------->
+	Name: factor_tmp	Type: long
+	Name: in_tmp	Type: long
+Name: entry	Type: void
+	Local variables ------->
+	Name: opcode_tmp	Type: int
+	Name: add1_tmp	Type: int
+	Name: dina_tmp	Type: int
+	Name: dinb_tmp	Type: int
+	Name: dout_tmp	Type: long
+	Name: dest_tmp	Type: unsigned
+
+----------------------------------------------------
+Module Name ----->
+floating
+Var List ----->
+Name: in_valid	Type: sc_core::sc_in<bool>
+Name: opcode	Type: sc_core::sc_in<int>
+Name: floata	Type: sc_core::sc_in<int>
+Name: floatb	Type: sc_core::sc_in<int>
+Name: dest	Type: sc_core::sc_in<unsigned
+Name: fdout	Type: sc_core::sc_out<int>
+Name: fout_valid	Type: sc_core::sc_out<bool>
+Name: fdestout	Type: sc_core::sc_out<unsigned
+Name: CLK	Type: sc_core::sc_in_clk
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: opcode_tmp	Type: int
+	Name: dout_tmp	Type: int
+	Name: dest_tmp	Type: unsigned
+	Name: fpua_sign_tmp	Type: unsigned
+	Name: fpua_exponent_tmp	Type: unsigned
+	Name: fpua_significand_tmp	Type: unsigned
+	Name: fpub_sign_tmp	Type: unsigned
+	Name: fpub_exponent_tmp	Type: unsigned
+	Name: fpub_significand_tmp	Type: unsigned
+	Name: opcode_encode	Type: const
+	Name: fpua_tmp	Type: unsigned
+	Name: fpub_tmp	Type: unsigned
+	Name: exponent_diff_tmp	Type: int
+	Name: significant_result	Type: unsigned
+	Name: overflow_sign_tmp	Type: unsigned
+	Name: result_exp_tmp	Type: unsigned
+	Name: result_sign_tmp	Type: unsigned
+
+----------------------------------------------------
+Module Name ----->
+mmxu
+Var List ----->
+Name: mmx_valid	Type: sc_core::sc_in<bool>
+Name: opcode	Type: sc_core::sc_in<int>
+Name: mmxa	Type: sc_core::sc_in<int>
+Name: mmxb	Type: sc_core::sc_in<int>
+Name: dest	Type: sc_core::sc_in<unsigned
+Name: mmxdout	Type: sc_core::sc_out<int>
+Name: mmxout_valid	Type: sc_core::sc_out<bool>
+Name: mmxdestout	Type: sc_core::sc_out<unsigned
+Name: CLK	Type: sc_core::sc_in_clk
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: opcode_tmp	Type: int
+	Name: dout_tmp	Type: unsigned
+	Name: dest_tmp	Type: unsigned
+	Name: opcode_encode	Type: const
+	Name: mmxa_tmp	Type: unsigned
+	Name: mmxb_tmp	Type: unsigned
+	Name: mmxa0_tmp	Type: unsigned
+	Name: mmxa1_tmp	Type: unsigned
+	Name: mmxa2_tmp	Type: unsigned
+	Name: mmxa3_tmp	Type: unsigned
+	Name: mmxb0_tmp	Type: unsigned
+	Name: mmxb1_tmp	Type: unsigned
+	Name: mmxb2_tmp	Type: unsigned
+	Name: mmxb3_tmp	Type: unsigned
+	Name: mmxc0_tmp	Type: unsigned
+	Name: mmxc1_tmp	Type: unsigned
+	Name: mmxc2_tmp	Type: unsigned
+	Name: mmxc3_tmp	Type: unsigned
+	Name: mmxcU_tmp	Type: unsigned
+	Name: mmxcL_tmp	Type: unsigned
+
+----------------------------------------------------
+Module Name ----->
+bios
+Var List ----->
+Name: datain	Type: sc_core::sc_in<unsigned
+Name: cs	Type: sc_core::sc_in<bool>
+Name: we	Type: sc_core::sc_in<bool>
+Name: addr	Type: sc_core::sc_in<unsigned
+Name: dataout	Type: sc_core::sc_out<unsigned
+Name: bios_valid	Type: sc_core::sc_out<bool>
+Name: stall_fetch	Type: sc_core::sc_out<bool>
+Name: CLK	Type: sc_core::sc_in_clk
+Name: imemory	Type: unsigned
+Name: itagmemory	Type: unsigned
+Name: wait_cycles	Type: int
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: address	Type: unsigned
+Name: init_param	Type: void
+	Local variables ------->
+	Name: given_delay_cycles	Type: int
+
+----------------------------------------------------
+Module Name ----->
+paging
+Var List ----->
+Name: paging_din	Type: sc_core::sc_in<unsigned
+Name: paging_csin	Type: sc_core::sc_in<bool>
+Name: paging_wein	Type: sc_core::sc_in<bool>
+Name: logical_address	Type: sc_core::sc_in<unsigned
+Name: icache_din	Type: sc_core::sc_in<unsigned
+Name: icache_validin	Type: sc_core::sc_in<bool>
+Name: icache_stall	Type: sc_core::sc_in<bool>
+Name: paging_dout	Type: sc_core::sc_out<unsigned
+Name: paging_csout	Type: sc_core::sc_out<bool>
+Name: paging_weout	Type: sc_core::sc_out<bool>
+Name: physical_address	Type: sc_core::sc_out<unsigned
+Name: dataout	Type: sc_core::sc_out<unsigned
+Name: data_valid	Type: sc_core::sc_out<bool>
+Name: stall_ifu	Type: sc_core::sc_out<bool>
+Name: CLK	Type: sc_core::sc_in_clk
+Name: pid_reg	Type: int
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: address	Type: int
+	Name: dataout_tmp	Type: int
+
+----------------------------------------------------
+Module Name ----->
+icache
+Var List ----->
+Name: datain	Type: sc_core::sc_in<unsigned
+Name: cs	Type: sc_core::sc_in<bool>
+Name: we	Type: sc_core::sc_in<bool>
+Name: addr	Type: sc_core::sc_in<unsigned
+Name: ld_valid	Type: sc_core::sc_in<bool>
+Name: ld_data	Type: sc_core::sc_in<int>
+Name: dataout	Type: sc_core::sc_out<unsigned
+Name: icache_valid	Type: sc_core::sc_out<bool>
+Name: stall_fetch	Type: sc_core::sc_out<bool>
+Name: CLK	Type: sc_core::sc_in_clk
+Name: icmemory	Type: unsigned
+Name: ictagmemory	Type: unsigned
+Name: pid	Type: int
+Name: wait_cycles	Type: int
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: address	Type: unsigned
+Name: init_param	Type: void
+	Local variables ------->
+	Name: given_delay_cycles	Type: int
+
+----------------------------------------------------
+Module Name ----->
+dcache
+Var List ----->
+Name: datain	Type: sc_core::sc_in<int>
+Name: statein	Type: sc_core::sc_in<unsigned
+Name: cs	Type: sc_core::sc_in<bool>
+Name: we	Type: sc_core::sc_in<bool>
+Name: addr	Type: sc_core::sc_in<unsigned
+Name: dest	Type: sc_core::sc_in<unsigned
+Name: destout	Type: sc_core::sc_out<unsigned
+Name: dataout	Type: sc_core::sc_out<int>
+Name: out_valid	Type: sc_core::sc_out<bool>
+Name: stateout	Type: sc_core::sc_out<unsigned
+Name: CLK	Type: sc_core::sc_in_clk
+Name: dmemory	Type: unsigned
+Name: dsmemory	Type: unsigned
+Name: dtagmemory	Type: unsigned
+Name: wait_cycles	Type: int
+
+Func List ----->
+Name: entry	Type: void
+	Local variables ------->
+	Name: address	Type: unsigned
+	Name: dest_tmp	Type: unsigned
+Name: init_param	Type: void
+	Local variables ------->
+	Name: given_delay_cycles	Type: int
+
+----------------------------------------------------
+Module Name ----->
+pic
+Var List ----->
+Name: ireq0	Type: sc_core::sc_in<bool>
+Name: ireq1	Type: sc_core::sc_in<bool>
+Name: ireq2	Type: sc_core::sc_in<bool>
+Name: ireq3	Type: sc_core::sc_in<bool>
+Name: cs	Type: sc_core::sc_in<bool>
+Name: rd_wr	Type: sc_core::sc_in<bool>
+Name: intack_cpu	Type: sc_core::sc_in<bool>
+Name: intreq	Type: sc_core::sc_out<bool>
+Name: intack	Type: sc_core::sc_out<bool>
+Name: vectno	Type: sc_core::sc_out<unsigned
+
+Func List ----->
+Name: entry	Type: void
+	No Local Variable!
+
+----------------------------------------------------
